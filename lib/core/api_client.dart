@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'export.dart';
 
 class ApiClient {
@@ -8,12 +10,7 @@ class ApiClient {
   }) async {
     try {
       final dio = Dio(
-        BaseOptions(
-          baseUrl: ApiConst.baseUrl,
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        ),
+        BaseOptions(baseUrl: ApiConst.baseUrl),
       );
 
       final response = type == 'get'
@@ -23,8 +20,9 @@ class ApiClient {
               data: postData,
             );
       return response.data;
-    } on DioException catch (e) {
-      throw Exception(e.message);
+    } catch (e) {
+      log("Error $e");
+      throw Exception(e);
     }
   }
 }

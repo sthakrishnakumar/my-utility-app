@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-
-import 'app/app.dart';
+import 'core/export.dart';
 
 void main() {
-  runApp(const MyUtilityApp());
+  runApp(
+    const ProviderScope(
+      child: MyUtilityApp(),
+    ),
+  );
 }

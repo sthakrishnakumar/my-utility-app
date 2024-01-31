@@ -22,7 +22,7 @@ class UtilityRepositoryImpl extends UtilityRepository {
       return Right(data);
     } on DioException catch (e) {
       return Left(
-        AppError(message: e.message!),
+        AppError(message: e.message.toString()),
       );
     }
   }

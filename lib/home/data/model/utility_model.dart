@@ -1,15 +1,34 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 class UtilityModel {
-  final String hris;
-  final String workReport;
+  final List<Utilities> utilities;
+
   UtilityModel({
-    required this.hris,
-    required this.workReport,
+    required this.utilities,
   });
 
   factory UtilityModel.fromJson(Map<String, dynamic> json) {
     return UtilityModel(
-      hris: json['hris'] ?? "",
-      workReport: json['work_report'] ?? "",
+      utilities: List.from(json["data"] ?? [])
+          .map(
+            (e) => Utilities.fromJson(e ?? {}),
+          )
+          .toList(),
+    );
+  }
+}
+
+class Utilities {
+  final String key;
+  final String value;
+  Utilities({
+    required this.key,
+    required this.value,
+  });
+
+  factory Utilities.fromJson(Map<String, dynamic> json) {
+    return Utilities(
+      key: json['key'] ?? "",
+      value: json['value'] ?? "",
     );
   }
 }

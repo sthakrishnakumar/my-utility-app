@@ -18,6 +18,7 @@ class UtilityDataSourceImpl extends UtilityDataSource {
   @override
   Future<UtilityModel> getUtilityDs() async {
     final response = await apiClient.request(ApiConst.myUtility);
+
     return UtilityModel.fromJson(response ?? {});
   }
 }

@@ -1,3 +1,6 @@
+//app
+export '../app/app.dart';
+
 //Packages
 export 'package:flutter_riverpod/flutter_riverpod.dart';
 export 'package:dio/dio.dart';
@@ -18,6 +21,8 @@ export '../home/data/data_source/utility_data_source.dart';
 export '../home/data/repository/utility_repository.dart';
 
 //controller
+export '../home/presentation/logic/utility_controller.dart';
 
 //pages
-
+export '../home/presentation/views/web_view_page.dart';
+export '../home/presentation/views/home.dart';
