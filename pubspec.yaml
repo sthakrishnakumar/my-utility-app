@@ -39,6 +39,7 @@ dependencies:
   dio: ^5.4.0
   fpdart: ^1.1.0
   webview_flutter: ^4.4.4
+  rename: ^3.0.1
 
 dev_dependencies:
   flutter_test:

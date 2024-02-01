@@ -8,6 +8,12 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          ref.invalidate(utilityControllerProvider);
+        },
+        child: const Icon(Icons.replay),
+      ),
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Utility Page"),
